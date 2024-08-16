@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GREEN-API Тестовое задание</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .container {
+            display: flex;
+            align-items: flex-start;
+        }
+        .form-container {
+            margin-right: 20px;
+        }
+        textarea {
+            width: 300px;
+            height: 300px;
+        }
+        input, button, textarea {
+            margin-bottom: 10px;
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .output-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .output-container h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <!-- Параметры подключения -->
+            <input type="text" id="idInstance" placeholder="idInstance">
+            <input type="text" id="apiTokenInstance" placeholder="ApiTokenInstance">
+            <button onclick="getSettings()">getSettings</button>
+            <button onclick="getStateInstance()">getStateInstance</button>
+            
+            <!-- Поля для отправки сообщений -->
+            <input type="text" id="chatId" placeholder="77771234567">
+            <textarea id="message" placeholder="Hello World!"></textarea>
+            <button onclick="sendMessage()">sendMessage</button>
+
+            <!-- Поля для отправки файла по URL -->
+            <input type="text" id="chatIdFile" placeholder="77771234567">
+            <input type="text" id="fileUrl" placeholder="https://my.site.com/img/horse.png">
+            <button onclick="sendFileByUrl()">sendFileByUrl</button>
+        </div>
+
+        <div class="output-container">
+            <h2>Ответ API:</h2>
+            <textarea id="apiResponse" readonly></textarea>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
